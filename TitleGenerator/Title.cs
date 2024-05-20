@@ -11,14 +11,13 @@ public class Title
     public char PatternBottom { get; set; }
     public int PaddingTop { get; set; }
     public int PaddingBottom { get; set; }
-    public int Border { get; set; }
     public int BorderTop { get; set; }
     public int BorderLeft { get; set; }
     public int BorderRight { get; set; }
     public int BorderBottom { get; set; }
 
     // Constructor
-    public Title(string[] text, int width = 100, char patternTop = '*', char patternLeft = '*', char patternRight = '*', char patternBottom = '*', int paddingTop = 1, int paddingBottom = 1, int border = 1, int borderTop = 1, int borderLeft = 1, int borderRight = 1, int borderBottom = 1)
+    public Title(string[] text, int width = 100, char patternTop = '*', char patternLeft = '*', char patternRight = '*', char patternBottom = '*', int paddingTop = 1, int paddingBottom = 1, int borderTop = 1, int borderLeft = 1, int borderRight = 1, int borderBottom = 1)
     {
         Text = text;
         Width = Math.Min(Console.WindowWidth, width) / 2 * 2; // Avoids line overflow + keeps width even for simplicity
@@ -31,7 +30,6 @@ public class Title
         PaddingTop = paddingTop;
         PaddingBottom = paddingBottom;
 
-        Border = border;
         BorderTop = borderTop;
         BorderLeft = borderLeft;
         BorderRight = borderRight;

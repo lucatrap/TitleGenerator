@@ -11,7 +11,6 @@ Console.WriteLine();
 title.Text[0] = "Hellooo";
 title.Text[1] = "Worlds";
 title.Text[2] = "!!!";
-title.Border = 2;
 title.BorderTop = 2;
 title.BorderLeft = 7;
 title.BorderRight = 4;
