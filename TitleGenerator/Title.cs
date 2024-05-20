@@ -10,7 +10,7 @@ public class Title
     public int Border { get; set; }
 
     // Constructor
-    public Title(string[] text, int width, char pattern, int padding, int border)
+    public Title(string[] text, int width = 100, char pattern = '*', int padding = 1, int border = 1)
     {
         Text = text;
         Width = Math.Min(Console.WindowWidth, width) / 2 * 2; // Avoids line overflow + keeps width even for simplicity
