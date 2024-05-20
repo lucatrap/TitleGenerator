@@ -13,7 +13,7 @@ public class Title
     public Title(string[] text, int width, char pattern, int padding, int border)
     {
         Text = text;
-        Width = width;
+        Width = Math.Min(Console.WindowWidth, width) / 2 * 2; // Avoids line overflow + keeps width even for simplicity
         Pattern = pattern;
         Padding = padding;
         Border = border;
