@@ -35,14 +35,7 @@ public class Title
         foreach (string line in Text)
         {
             // Adjust right padding if line length is odd to avoid asymmetrical border
-            if (line.Length % 2 == 1)
-            {
-                Console.WriteLine(new string(Pattern, Border) + new string(' ', (Width - Border - Border - line.Length) / 2) + line + " " + new string(' ', (Width - Border - Border - line.Length) / 2) + new string(Pattern, Border));
-            }
-            else
-            {
-                Console.WriteLine(new string(Pattern, Border) + new string(' ', (Width - Border - Border - line.Length) / 2) + line + new string(' ', (Width - Border - Border - line.Length) / 2) + new string(Pattern, Border));
-            }
+            Console.WriteLine(new string(Pattern, Border) + new string(' ', (Width - Border - Border - line.Length) / 2) + line + (line.Length % 2 == 1 ? " " : "") + new string(' ', (Width - Border - Border - line.Length) / 2) + new string(Pattern, Border));
         }
 
         for (int i = 0; i < Padding; i++)

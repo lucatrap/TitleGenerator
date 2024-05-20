@@ -1,6 +1,6 @@
 ﻿using TitleGenerator;
 
-Title title = new(["Hello", "World", "!"]);
+Title title = new(["Hello", "Worlds", "!"]);
 
 title.Draw();
 
