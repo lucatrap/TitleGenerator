@@ -48,4 +48,46 @@ public class Title
             Console.WriteLine(new string(Pattern, Width));
         }     
     }
+
+    public void DrawSlow()
+    {
+        int smallDelay = 200;
+        int mediumDelay = 400;
+        int longDelay = 800;
+
+        Thread.Sleep(mediumDelay);
+
+        for (int i = 0; i < Border; i++)
+        {
+            Console.WriteLine(new string(Pattern, Width));
+            Thread.Sleep(smallDelay);
+        }
+
+        for (int i = 0; i < Padding; i++)
+        {
+            Console.WriteLine(new string(Pattern, Border) + new string(' ', Width - Border - Border) + new string(Pattern, Border));
+            Thread.Sleep(smallDelay);
+        }
+
+        foreach (string line in Text)
+        {
+            // Adjust right padding if line length is odd to avoid asymmetrical border
+            Console.WriteLine(new string(Pattern, Border) + new string(' ', (Width - Border - Border - line.Length) / 2) + line + (line.Length % 2 == 1 ? " " : "") + new string(' ', (Width - Border - Border - line.Length) / 2) + new string(Pattern, Border));
+            Thread.Sleep(smallDelay);
+        }
+
+        for (int i = 0; i < Padding; i++)
+        {
+            Console.WriteLine(new string(Pattern, Border) + new string(' ', Width - Border - Border) + new string(Pattern, Border));
+            Thread.Sleep(smallDelay);
+        }
+
+        for (int i = 0; i < Border; i++)
+        {
+            Console.WriteLine(new string(Pattern, Width));
+            Thread.Sleep(smallDelay);
+        }
+
+        Thread.Sleep(longDelay);
+    }
 }
