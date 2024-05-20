@@ -9,11 +9,12 @@ public class Title
     public char PatternLeft { get; set; }
     public char PatternRight { get; set; }
     public char PatternBottom { get; set; }
-    public int Padding { get; set; }
+    public int PaddingTop { get; set; }
+    public int PaddingBottom { get; set; }
     public int Border { get; set; }
 
     // Constructor
-    public Title(string[] text, int width = 100, char patternTop = '*', char patternLeft = '*', char patternRight = '*', char patternBottom = '*', int padding = 1, int border = 1)
+    public Title(string[] text, int width = 100, char patternTop = '*', char patternLeft = '*', char patternRight = '*', char patternBottom = '*', int paddingTop = 1, int paddingBottom = 1, int border = 1)
     {
         Text = text;
         Width = Math.Min(Console.WindowWidth, width) / 2 * 2; // Avoids line overflow + keeps width even for simplicity
@@ -22,8 +23,10 @@ public class Title
         PatternLeft = patternLeft;
         PatternRight = patternRight;
         PatternBottom = patternBottom;
-        
-        Padding = padding;
+
+        PaddingTop = paddingTop;
+        PaddingBottom = paddingBottom;
+
         Border = border;
     }
 
@@ -35,7 +38,7 @@ public class Title
             Console.WriteLine(new string(PatternTop, Width));
         }
 
-        for (int i = 0; i < Padding; i++)
+        for (int i = 0; i < PaddingTop; i++)
         {
             Console.WriteLine(new string(PatternLeft, Border) + new string(' ', Width - Border - Border) + new string(PatternRight, Border));
         }
@@ -46,7 +49,7 @@ public class Title
             Console.WriteLine(new string(PatternLeft, Border) + new string(' ', (Width - Border - Border - line.Length) / 2) + line + (line.Length % 2 == 1 ? " " : "") + new string(' ', (Width - Border - Border - line.Length) / 2) + new string(PatternRight, Border));
         }
 
-        for (int i = 0; i < Padding; i++)
+        for (int i = 0; i < PaddingBottom; i++)
         {
             Console.WriteLine(new string(PatternLeft, Border) + new string(' ', Width - Border - Border) + new string(PatternRight, Border));
         }
@@ -71,7 +74,7 @@ public class Title
             Thread.Sleep(smallDelay);
         }
 
-        for (int i = 0; i < Padding; i++)
+        for (int i = 0; i < PaddingTop; i++)
         {
             Console.WriteLine(new string(PatternLeft, Border) + new string(' ', Width - Border - Border) + new string(PatternRight, Border));
             Thread.Sleep(smallDelay);
@@ -84,7 +87,7 @@ public class Title
             Thread.Sleep(smallDelay);
         }
 
-        for (int i = 0; i < Padding; i++)
+        for (int i = 0; i < PaddingBottom; i++)
         {
             Console.WriteLine(new string(PatternLeft, Border) + new string(' ', Width - Border - Border) + new string(PatternRight, Border));
             Thread.Sleep(smallDelay);
