@@ -1,3 +1,12 @@
+/*
+************************************************************
+*                                                          *
+*                        lucatrap's                        *
+*                     TITLE GENERATOR                      *
+*                                                          *
+************************************************************
+*/
+
 namespace TitleGenerator;
 
 public class Title
@@ -5,12 +14,15 @@ public class Title
     // Properties
     public string[] Text { get; set; }
     public int Width { get; set; }
+
     public char PatternTop { get; set; }
     public char PatternLeft { get; set; }
     public char PatternRight { get; set; }
     public char PatternBottom { get; set; }
+
     public int PaddingTop { get; set; }
     public int PaddingBottom { get; set; }
+
     public int BorderTop { get; set; }
     public int BorderLeft { get; set; }
     public int BorderRight { get; set; }
