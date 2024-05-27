@@ -2,7 +2,7 @@
 
 Console.Clear();
 
-Title title = new(["Hello", "World", "!"]);
+Title title = new(["Hello", "World", "!"], borderStyleTop: "third");
 
 title.Draw();
 
