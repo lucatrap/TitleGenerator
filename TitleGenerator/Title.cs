@@ -167,4 +167,25 @@ public class Title
 
         Thread.Sleep(longDelay);
     }
+
+    public void ChangeBorderStyle(string side, string style)
+    {
+        switch (side)
+        {
+            case "top":
+                BorderStyleTop = BorderStyles[style];
+                return;
+            case "left":
+                BorderStyleLeft = BorderStyles[style];
+                return;
+            case "right":
+                BorderStyleRight = BorderStyles[style];
+                return;
+            case "bottom":
+                BorderStyleBottom = BorderStyles[style];
+                return;
+            default:
+                return;
+        }
+    }
 }

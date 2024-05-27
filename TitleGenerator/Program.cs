@@ -2,7 +2,7 @@
 
 Console.Clear();
 
-Title title = new(["Hello", "World", "!"], borderStyleTop: "third");
+Title title = new(["Hello", "World", "!"], borderStyleTop: "half");
 
 title.Draw();
 
@@ -21,6 +21,8 @@ title.PatternRight = '#';
 title.PatternBottom = '&';
 title.PaddingTop = 0;
 title.PaddingBottom = 2;
+
+title.ChangeBorderStyle("top", "third");
 
 title.DrawSlow();
 
