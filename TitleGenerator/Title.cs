@@ -1,10 +1,10 @@
 /*
-************************************************************
+* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * 
 *                                                          *
 *                        lucatrap's                        *
 *                     TITLE GENERATOR                      *
 *                                                          *
-************************************************************
+ * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
 */
 
 namespace TitleGenerator;
@@ -63,6 +63,7 @@ public class Title
     // Methods
     public void Draw()
     {
+        // Top border lines
         if (BorderStyleTop == 1)
         {
             for (int i = 0; i < BorderTop; i++)
@@ -83,11 +84,13 @@ public class Title
             }
         }
 
+        // Top padding lines
         for (int i = 0; i < PaddingTop; i++)
         {
             Console.WriteLine(new string(PatternLeft, BorderLeft) + new string(' ', Width - BorderLeft - BorderRight) + new string(PatternRight, BorderRight));
         }
 
+        // Text lines
         foreach (string line in Text)
         {
             // Adjust right padding if line length is odd to avoid asymmetrical border
@@ -97,11 +100,13 @@ public class Title
             Console.WriteLine(new string(PatternLeft, BorderLeft) + new string(' ', (Width - BorderLeft - BorderRight - adjustedLine.Length) / 2) + adjustedLine + new string(' ', (Width - BorderLeft - BorderRight - adjustedLine.Length) / 2 + (oddBorderWidth ? 1 : 0)) + new string(PatternRight, BorderRight));
         }
 
+        // Bottom padding lines
         for (int i = 0; i < PaddingBottom; i++)
         {
             Console.WriteLine(new string(PatternLeft, BorderLeft) + new string(' ', Width - BorderLeft - BorderRight) + new string(PatternRight, BorderRight));
         }
 
+        // Bottom border lines
         for (int i = 0; i < BorderBottom; i++)
         {
             Console.WriteLine(new string(PatternBottom, Width));
@@ -116,6 +121,7 @@ public class Title
 
         Thread.Sleep(mediumDelay);
 
+        // Top border lines
         if (BorderStyleTop == 1)
         {
             for (int i = 0; i < BorderTop; i++)
@@ -137,12 +143,14 @@ public class Title
             }
         }
 
+        // Top padding lines
         for (int i = 0; i < PaddingTop; i++)
         {
             Console.WriteLine(new string(PatternLeft, BorderLeft) + new string(' ', Width - BorderLeft - BorderRight) + new string(PatternRight, BorderRight));
             Thread.Sleep(smallDelay);
         }
 
+        // Text lines
         foreach (string line in Text)
         {
             // Adjust right padding if line length is odd to avoid asymmetrical border
@@ -153,12 +161,14 @@ public class Title
             Thread.Sleep(smallDelay);
         }
 
+        // Bottom padding lines
         for (int i = 0; i < PaddingBottom; i++)
         {
             Console.WriteLine(new string(PatternLeft, BorderLeft) + new string(' ', Width - BorderLeft - BorderRight) + new string(PatternRight, BorderRight));
             Thread.Sleep(smallDelay);
         }
 
+        // Bottom border lines
         for (int i = 0; i < BorderBottom; i++)
         {
             Console.WriteLine(new string(PatternBottom, Width));
